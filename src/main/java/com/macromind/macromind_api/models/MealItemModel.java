@@ -6,10 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "meal_items")
-public class Mealitem {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class MealItemModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
