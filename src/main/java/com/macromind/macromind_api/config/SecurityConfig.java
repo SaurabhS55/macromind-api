@@ -27,7 +27,7 @@ public class SecurityConfig {
     private final JwtRequestFilter jwtAuthFilter;
     private final UserDetailsService userDetailsService;
 
-    @Value("${bcrypt.rounds}")
+    @Value("${bcrypt.rounds:10}")
     private int rounds;
 
     @Bean

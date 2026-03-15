@@ -25,14 +25,12 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<CommonResponse> register(
             @RequestBody RegisterRequest request) {
-        log.info("Register request: {}", request);
         return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(
             @RequestBody AuthRequest request) {
-        log.info("Login request: {}", request);
         return ResponseEntity.ok(service.login(request));
     }
 }
