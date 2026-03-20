@@ -15,16 +15,24 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "daily_goals", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"user_id", "date"})
+        @UniqueConstraint(columnNames = { "user_id", "date" })
 })
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class DailyGoalModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @ManyToOne
     private UserModel user;
 
